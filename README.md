@@ -8,8 +8,7 @@ PyPhotoOrganizer is a Python application built with PyQt5 for organizing and man
 - Display photos in a list and view selected images.
 - Extract and display EXIF information (capture time, dimensions, ISO, exposure time, aperture) if available.
 - Keep all photos, keep only the JPEG version, or delete both the JPEG and raw versions.
-- Filter photos based on file types (e.g., keep only JPEG files).
-- Customizable keyboard shortcuts for quick operations.
+- Keyboard shortcuts for quick operations.
 - Supports popular raw file formats.
 
 ## Installation
@@ -32,7 +31,7 @@ PyPhotoOrganizer is a Python application built with PyQt5 for organizing and man
 1. Launch the application.
 2. Click the "Select Folder" button to choose the folder containing your photos.
 3. The list widget displays the photos in the selected folder. Select a photo to view it in the image label.
-4. Use the provided buttons or keyboard shortcuts to perform operations on the selected photo(s).
+4. Use the provided buttons or keyboard shortcuts to perform operations on the selected photo.
 5. EXIF information, if available, will be displayed in the top labels.
 6. Continue organizing and managing your photos efficiently.
 
