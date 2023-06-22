@@ -105,7 +105,7 @@ class PhotoOrganizer(QMainWindow):
         bottom_layout.addWidget(self.keep_all_button)
 
         # 创建仅保留raw按钮
-        self.keep_jpg_button = QPushButton("Keep J(W)")
+        self.keep_jpg_button = QPushButton("Keep JPG(W)")
         self.keep_jpg_button.clicked.connect(self.keep_jpg)
         self.keep_jpg_button.setShortcut(QKeySequence("W"))  # 添加快捷键 W
         bottom_layout.addWidget(self.keep_jpg_button)
