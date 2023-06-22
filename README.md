@@ -2,6 +2,12 @@
 
 PyPhotoOrganizer is a Python application built with PyQt5 for organizing and managing photos in a selected folder. It provides a user-friendly interface to browse through photos, display images, and perform various operations such as keeping, deleting, and filtering based on file types.
 
+
+In simple terms, this program is designed to delete unnecessary photos. It can either delete raw format photos only or delete both raw format and jpg format photos simultaneously.
+
+
+
+
 ## Features
 
 - Select a folder to organize and manage photos.
