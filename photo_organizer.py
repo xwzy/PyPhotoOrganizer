@@ -65,12 +65,12 @@ class PhotoOrganizer(QMainWindow):
 
         # 创建当前文件夹路径标签
         self.folder_label = QLabel()
-        self.folder_label.setText("当前文件夹：")
+        self.folder_label.setText("Current Folder:")
         top_layout.addWidget(self.folder_label)
 
         # 创建当前文件名标签
         self.filename_label = QLabel()
-        self.filename_label.setText("当前文件：")
+        self.filename_label.setText("Current File:")
         top_layout.addWidget(self.filename_label)
 
         main_layout.addLayout(top_layout)
@@ -94,24 +94,24 @@ class PhotoOrganizer(QMainWindow):
         bottom_layout = QHBoxLayout()
 
         # 创建选择文件夹按钮
-        self.select_folder_button = QPushButton("选择文件夹")
+        self.select_folder_button = QPushButton("Select Folder")
         self.select_folder_button.clicked.connect(self.select_folder)
         bottom_layout.addWidget(self.select_folder_button)
 
         # 创建全部保留按钮
-        self.keep_all_button = QPushButton("全部保留（Q）")
+        self.keep_all_button = QPushButton("Keep All(Q)")
         self.keep_all_button.clicked.connect(self.keep_all)
         self.keep_all_button.setShortcut(QKeySequence("Q"))  # 添加快捷键 Q
         bottom_layout.addWidget(self.keep_all_button)
 
         # 创建仅保留raw按钮
-        self.keep_raw_button = QPushButton("仅保留jpg（W）")
-        self.keep_raw_button.clicked.connect(self.keep_jpg)
-        self.keep_raw_button.setShortcut(QKeySequence("W"))  # 添加快捷键 W
-        bottom_layout.addWidget(self.keep_raw_button)
+        self.keep_jpg_button = QPushButton("Keep J(W)")
+        self.keep_jpg_button.clicked.connect(self.keep_jpg)
+        self.keep_jpg_button.setShortcut(QKeySequence("W"))  # 添加快捷键 W
+        bottom_layout.addWidget(self.keep_jpg_button)
 
         # 创建全部删除按钮
-        self.delete_all_button = QPushButton("全部删除（E）")
+        self.delete_all_button = QPushButton("Delete All(E)")
         self.delete_all_button.clicked.connect(self.delete_all)
         self.delete_all_button.setShortcut(QKeySequence("E"))  # 添加快捷键 E
         bottom_layout.addWidget(self.delete_all_button)
@@ -139,7 +139,7 @@ class PhotoOrganizer(QMainWindow):
         self.load_photos()
 
     def select_folder(self):
-        directory = QFileDialog.getExistingDirectory(self, "选择文件夹")
+        directory = QFileDialog.getExistingDirectory(self, "Select Folder")
         if directory:
             self.directory = directory  # 更新成员变量 directory
             self.load_photos()
@@ -202,14 +202,14 @@ class PhotoOrganizer(QMainWindow):
             aperture = aperture if aperture else "N/A"
 
             # Update the labels in the top layout
-            self.folder_label.setText("当前文件夹：" + self.directory)
+            self.folder_label.setText("Current Folder:" + self.directory)
             self.filename_label.setText(
-                f"当前文件：{image_name} \n 大小: {file_size}, 拍摄时间: {capture_time}, 尺寸: {dimensions} \n ISO: {iso}, 曝光时间: {exposure_time}, 光圈: {aperture}"
+                f"Current File: {image_name} \nSize: {file_size}, Capture Time: {capture_time}, Dimensions: {dimensions} \nISO: {iso}, Exposure Time: {exposure_time}, Aperture: {aperture}"
             )
         else:
             # If no EXIF information is available, display the image name only
-            self.folder_label.setText("当前文件夹：" + self.directory)
-            self.filename_label.setText("当前文件：" + image_name)
+            self.folder_label.setText("Current Folder:" + self.directory)
+            self.filename_label.setText("Current File:" + image_name)
 
     def get_exif_info(self, image_path):
         try:
@@ -228,7 +228,7 @@ class PhotoOrganizer(QMainWindow):
 
     def keep_all(self):
         if self.current_index + 1 == len(self.image_list):
-            self.display_message("                    已完成整理")
+            self.display_message("Finish organizing photos")
         else:
             self.list_widget.setCurrentRow(self.current_index + 1)
 
@@ -243,7 +243,7 @@ class PhotoOrganizer(QMainWindow):
         tmp_index = self.current_index + 1
         self.load_photos()
         if tmp_index == len(self.image_list):
-            self.display_message("已完成整理")
+            self.display_message("Finish organizing photos")
         else:
             self.list_widget.setCurrentRow(tmp_index)
 
@@ -260,7 +260,7 @@ class PhotoOrganizer(QMainWindow):
         tmp_index = self.current_index
         self.load_photos()
         if tmp_index == len(self.image_list):
-            self.display_message("已完成整理")
+            self.display_message("Finish organizing photos")
         else:
             self.list_widget.setCurrentRow(tmp_index)
 

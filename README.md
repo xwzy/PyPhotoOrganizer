@@ -20,11 +20,11 @@ PyPhotoOrganizer is a Python application built with PyQt5 for organizing and man
    ```
 2. Install the dependencies:
    ```
-   pip install -r requirements.txt
+   pip3 install PyQt5 Pillow
    ```
 3. Run the application:
    ```
-   python photo_organizer.py
+   python3 photo_organizer.py
    ```
 
 ## Usage
