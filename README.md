@@ -1,5 +1,10 @@
 # PyPhotoOrganizer
 
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+
+
 ## Delete Raw Photo and Keep JPG
 
 PyPhotoOrganizer is a Python application built with PyQt5 for organizing and managing photos in a selected folder. It provides a user-friendly interface to browse through photos, display images, and perform various operations such as keeping, deleting, and filtering based on file types.
@@ -57,6 +62,3 @@ This project is licensed under the [MIT License](LICENSE).
 - [Pillow](https://python-pillow.org/) - Python Imaging Library fork for image processing.
 - [ExifTags](https://pillow.readthedocs.io/en/stable/reference/ExifTags.html) - Constants for EXIF tag names.
 
-## Screenshots
-
-![Screenshot 1](screenshots/screenshot1.png)
